@@ -9,7 +9,7 @@ load_dotenv()
 
 class TextToSpeech:
     DG_API_KEY = os.getenv("DEEPGRAM_API_KEY")
-    MODEL_NAME = "aura-helios-en"
+    MODEL_NAME = "aura-luna-en"
 
     @staticmethod
     def is_installed(lib_name: str) -> bool:

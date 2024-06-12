@@ -20,7 +20,7 @@ async def get_transcript(callback):
                 full_sentence = transcript_collector.get_full_transcript()
                 if len(full_sentence.strip()) > 0:
                     full_sentence = full_sentence.strip()
-                    print(f"Human: {full_sentence}")
+                    print(f"User: {full_sentence}")
                     callback(full_sentence)
                     transcript_collector.reset()
                     transcription_complete.set()
