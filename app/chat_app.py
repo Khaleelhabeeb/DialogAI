@@ -48,7 +48,7 @@ class ChatApp(QWidget):
         self.stop_animation()
 
     def show_animation(self):
-        movie = QMovie("path/to/your/loading.gif")
+        movie = QMovie("loading.gif")
         self.animation_label.setMovie(movie)
         movie.start()
 
