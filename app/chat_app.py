@@ -19,7 +19,7 @@ class ChatApp(QWidget):
         self.label = QLabel('Press the button and speak')
         layout.addWidget(self.label)
 
-        self.start_button = QPushButton('Start Talking..')
+        self.start_button = QPushButton('Talk')
         self.start_button.clicked.connect(self.start_listening)
         layout.addWidget(self.start_button)
 
