@@ -91,12 +91,7 @@ class ChatApp(QMainWindow):
         self.thought_bubble.setText('Conversation ended')
         self.talk_button.setDisabled(False)
         self.stop_animation()
-
-    def show_animation(self):
-        movie = QMovie("loading.gif")
-        self.animation_label.setMovie(movie)
-        movie.start()
-
+ 
     def stop_animation(self):
         self.animation_label.clear()
 
