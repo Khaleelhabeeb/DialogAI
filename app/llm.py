@@ -16,7 +16,7 @@ load_dotenv()
 
 class LanguageModelProcessor:
     def __init__(self):
-        self.llm = ChatGroq(temperature=0, model_name="mixtral-8x7b-32768", groq_api_key=os.getenv("GROQ_API_KEY"))
+        self.llm = ChatGroq(temperature=0, model_name="llama3-8b-8192", groq_api_key=os.getenv("GROQ_API_KEY"))
         self.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
         with open('system_prompt.txt', 'r') as file:
             system_prompt = file.read().strip()

@@ -1,7 +1,7 @@
 import asyncio
 from app.llm import LanguageModelProcessor
 from app.text_to_speech import TextToSpeech
-from utils.audio_transcription import get_transcript, transcript_collector
+from utils.audio_transcription import get_transcript
 
 class ConversationManager:
     def __init__(self):
