@@ -37,7 +37,7 @@ class ChatApp(QMainWindow):
         left_layout.addWidget(self.dialog_ai_title)
         
         self.dialog_ai_image = QLabel()
-        self.set_background_image("ui/bg.png")  # Set initial background
+        self.set_background_image("assets/bg.png")  # Set initial background
         self.dialog_ai_image.setAlignment(Qt.AlignCenter)
         #self.dialog_ai_image.setFrameShape(QFrame.Box)
         #self.dialog_ai_image.setLineWidth(2)
@@ -136,7 +136,7 @@ class ChatApp(QMainWindow):
         self.thought_bubble.setText('Listening...')
         self.talk_button.setDisabled(True)
         self.interrupted = False
-        self.set_background_image("ui/bg2.png")  # Set image for speaking
+        self.set_background_image("assets/bg2.png")  # Set image for speaking
         
         self.conversation_task = threading.Thread(target=self.run_conversation)
         self.conversation_task.start()
