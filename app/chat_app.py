@@ -20,6 +20,7 @@ class ChatApp(QMainWindow):
         
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
+        self.setStyleSheet("background-color: #030302;")
         
         # Main layout
         main_layout = QHBoxLayout()
@@ -31,7 +32,7 @@ class ChatApp(QMainWindow):
         
         self.dialog_ai_title = QLabel("Dialog AI")
         self.dialog_ai_title.setAlignment(Qt.AlignCenter)
-        self.dialog_ai_title.setStyleSheet("font-size: 24px; font-weight: bold;")
+        self.dialog_ai_title.setStyleSheet("font-size: 24px; font-weight: bold; color: #708090")
         left_layout.addWidget(self.dialog_ai_title)
         
         self.dialog_ai_image = QLabel()
@@ -48,29 +49,29 @@ class ChatApp(QMainWindow):
         
         self.thought_bubble = QLabel(" ")
         self.thought_bubble.setAlignment(Qt.AlignCenter)
-        self.thought_bubble.setStyleSheet("background-color: black; color: white; font-size: 20px; border-radius: 15px; padding: 10px;")
+        self.thought_bubble.setStyleSheet("background-color: #708090; color: black; font-size: 20px; border-radius: 15px; padding: 10px;")
         right_layout.addWidget(self.thought_bubble, 20)
         
         self.talk_button = QPushButton("Talk")
-        self.talk_button.setStyleSheet("font-size: 18px;")
+        self.talk_button.setStyleSheet("font-size: 18px; background-color: #708090")
         self.talk_button.setFixedSize(100, 50)
         self.talk_button.clicked.connect(self.start_listening)
         right_layout.addWidget(self.talk_button, 10, alignment=Qt.AlignCenter)
         
         self.interrupt_button = QPushButton("Interrupt")
-        self.interrupt_button.setStyleSheet("font-size: 18px;")
+        self.interrupt_button.setStyleSheet("font-size: 18px; background-color: #708090")
         self.interrupt_button.setFixedSize(100, 50)
         self.interrupt_button.clicked.connect(self.interrupt_conversation)
         right_layout.addWidget(self.interrupt_button, 10, alignment=Qt.AlignCenter)
         
         self.stop_button = QPushButton("STOP")
-        self.stop_button.setStyleSheet("font-size: 18px;")
+        self.stop_button.setStyleSheet("font-size: 18px; background-color: #708090")
         self.stop_button.setFixedSize(100, 50)
         self.stop_button.clicked.connect(self.stop_conversation)
         right_layout.addWidget(self.stop_button, 10, alignment=Qt.AlignCenter)
         
         self.recording_label = QLabel("recording........")
-        self.recording_label.setStyleSheet("font-size: 14px; color: red;")
+        self.recording_label.setStyleSheet("font-size: 14px; color: #708090; ")
         right_layout.addWidget(self.recording_label, 10, alignment=Qt.AlignCenter)
         
         main_layout.addLayout(right_layout, 30)
@@ -85,7 +86,7 @@ class ChatApp(QMainWindow):
         self.thought_bubble.setText('Listening...')
         self.talk_button.setDisabled(True)
         self.interrupted = False
-        self.set_background_image("ui/bg2.gif")  # Set image for speaking
+        self.set_background_image("ui/bg2.png")  # Set image for speaking
         
         self.conversation_task = threading.Thread(target=self.run_conversation)
         self.conversation_task.start()
