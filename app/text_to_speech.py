@@ -1,9 +1,11 @@
 import os
-import shutil
-import subprocess
-import time
 import requests
+import time
 from dotenv import load_dotenv
+from pydub import AudioSegment
+from pydub.playback import play
+from io import BytesIO
+import shutil
 
 load_dotenv()
 
@@ -17,8 +19,6 @@ class TextToSpeech:
         return lib is not None
 
     def speak(self, text):
-        if not self.is_installed("ffplay"):
-            raise ValueError("ffplay not found, necessary to stream audio.")
         DEEPGRAM_URL = f"https://api.deepgram.com/v1/speak?model={self.MODEL_NAME}&performance=some&encoding=linear16&sample_rate=24000"
         headers = {
             "Authorization": f"Token {self.DG_API_KEY}",
@@ -27,15 +27,12 @@ class TextToSpeech:
         payload = {
             "text": text
         }
-        player_command = ["ffplay", "-autoexit", "-", "-nodisp"]
-        player_process = subprocess.Popen(
-            player_command,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
+        
         start_time = time.time()
         first_byte_time = None
+        
+        audio_buffer = BytesIO()
+        
         with requests.post(DEEPGRAM_URL, stream=True, headers=headers, json=payload) as r:
             for chunk in r.iter_content(chunk_size=1024):
                 if chunk:
@@ -43,8 +40,8 @@ class TextToSpeech:
                         first_byte_time = time.time()
                         ttfb = int((first_byte_time - start_time) * 1000)
                         print(f"TTS Time to First Byte (TTFB): {ttfb}ms\n")
-                    player_process.stdin.write(chunk)
-                    player_process.stdin.flush()
-        if player_process.stdin:
-            player_process.stdin.close()
-        player_process.wait()
+                    audio_buffer.write(chunk)
+        
+        audio_buffer.seek(0)
+        audio_segment = AudioSegment.from_file(audio_buffer, format="wav")
+        play(audio_segment)
