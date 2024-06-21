@@ -11,6 +11,12 @@ DialogAI is an advanced conversational AI system designed to provide real-time t
 - Memory Management: Maintains a conversation history to provide contextually relevant responses.
 - GUI: User-friendly interface for easy interaction with the system.
 
+# <h1 align="center"> Screenshots </h1>
+<p align="center">
+  <img src="assets/screenshots/screen1.jpg" alt="DialogAI Screenshot" width="45%" />
+  <img src="assets/screenshots/screen2.jpg" alt="DialogAI Screenshot" width="45%" />
+</p>
+
 # Installation
 
 ### Prerequisites
