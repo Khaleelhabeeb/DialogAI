@@ -22,7 +22,7 @@ DialogAI is an advanced conversational AI system designed to provide real-time t
 ### Prerequisites
 
 - Python 3.8 or higher
--langchain & langchain_groq
+- langchain & langchain_groq
 - API keys for Deepgram, Groq
 
 ### Clone the repository 
