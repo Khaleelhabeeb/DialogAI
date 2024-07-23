@@ -1,7 +1,7 @@
 # <h1 align="center"> DialogAI </h1>
 A Desktop App Designed for Voice Chat with an LLM
 
-DialogAI is an advanced conversational AI system designed to provide real-time transcription, language model processing, and text-to-speech functionalities. This project leverages multiple APIs and libraries to deliver seamless and interactive voice-based interactions. The application is built with a graphical user interface (GUI).
+DialogAI is an advanced conversational AI system designed to provide real-time transcription, language model processing, and text-to-speech functionalities. This project leverages a couple  APIs and libraries to deliver seamless and interactive voice-based interactions. The application is built with a graphical user interface (GUI).
 
 # <h1 align="center"> Features </h1>
 
