@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #d3d3d3;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.left-panel {
+  flex: 0 0 70%; /* 70% width, don't grow, don't shrink */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#dialog-ai-title {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#dialog-ai-image {
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.right-panel {
+  flex: 0 0 30%; /* 30% width, don't grow, don't shrink */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; /* Distribute space evenly */
+  box-sizing: border-box;
+  background-color: #2a2a2a; /* Slightly different background for the right panel */
+}
+
+#thought-bubble {
+  background-color: #333333;
+  color: #d3d3d3;
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 15px;
+  border: 2px solid #708090;
+  text-align: center;
+  min-height: 50px; /* Ensure it has some height even when empty */
+  width: 80%; /* Take up most of the panel width */
+  box-sizing: border-box;
+}
+
+button {
+  font-size: 18px;
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 150px; /* Fixed width for buttons */
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#talk-button {
+  background-color: #4CAF50; /* Green */
+}
+#talk-button:hover {
+  background-color: #45a049;
+}
+
+#interrupt-button {
+  background-color: #FF9800; /* Orange */
+}
+#interrupt-button:hover {
+  background-color: #e68a00;
+}
+
+#stop-button {
+  background-color: #F44336; /* Red */
+}
+#stop-button:hover {
+  background-color: #d32f2f;
+}
+
+#recording-label {
+  font-size: 14px;
+  color: #d3d3d3;
+  background-color: #0ad10a;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-align: center;
+  visibility: hidden; /* Hidden by default */
+}
